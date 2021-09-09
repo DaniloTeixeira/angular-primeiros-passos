@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ola-mundo": {
+    "calculadora": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ola-mundo",
+            "outputPath": "dist/calculadora",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ola-mundo:build:production"
+              "browserTarget": "calculadora:build:production"
             },
             "development": {
-              "browserTarget": "ola-mundo:build:development"
+              "browserTarget": "calculadora:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ola-mundo:build"
+            "browserTarget": "calculadora:build"
           }
         },
         "test": {
@@ -98,21 +98,9 @@
             ],
             "scripts": []
           }
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
-          }
         }
       }
     }
   },
-  "defaultProject": "ola-mundo",
-  "cli": {
-    "defaultCollection": "@angular-eslint/schematics"
-  }
+  "defaultProject": "calculadora"
 }
