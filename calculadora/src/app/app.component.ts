@@ -32,10 +32,10 @@ export class AppComponent implements OnInit {
     if (numAtual === '0' || numAtual === null) {
       numAtual = '';
     }
-    if (numConcat === '.' && numAtual === '') {
+    if (numConcat === ',' && numAtual === '') {
       return '0.';
     }
-    if (numConcat === '.' || numAtual.indexOf('.') > -1) {
+    if (numConcat === '.' || numAtual.indexOf(',') !== -1) {
       return numAtual;
     }
     return numAtual + numConcat;
@@ -51,7 +51,7 @@ export class AppComponent implements OnInit {
       this.operacao = operacao;
       return;
     }
-    {
+    if (this.numero2 !== null) {
       this.resultado = this.calculadoraService.calcular(
         parseFloat(this.numero1),
         parseFloat(this.numero2),
@@ -65,7 +65,7 @@ export class AppComponent implements OnInit {
 
   calcularResultado() {
     if (this.numero2 === null) {
-      return
+      return;
     }
     this.resultado = this.calculadoraService.calcular(
       parseFloat(this.numero1),
